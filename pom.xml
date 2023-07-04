@@ -29,7 +29,22 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<!-- Deploy User Parameter -->
+						<username>TestUser16​​</username>
+						<password>Test@1611</password>
+						<!-- Environment Parameter -->
+						<environment>Sandbox​​</environment>
+						<applicationName>test-CICD</applicationName>
+						<!-- 					<businessGroup>Test​​</businessGroup> -->
+						<workerType>MICRO​​</workerType>
+					</cloudHubDeployment>
+				</configuration>
 			</plugin>
+			
 		</plugins>
 	</build>
 
