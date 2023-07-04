@@ -1,0 +1,26 @@
+#%RAML 1.0
+title: Test
+mediaType: [application/json]
+baseUri: https://host:port/api/
+
+traits:
+  clientIdAuth: !include client-id-security.raml
+
+uses:
+  lib: api-library.raml
+
+resourceTypes:
+  member-json: !include ResponseCodes.raml
+
+types:
+  heartbeat-response: lib.heartbeat | lib.error
+
+/heartbeat:
+  is:
+      - clientIdAuth:
+  type:
+    member-json:
+      get-response-type: heartbeat-response
+      get-response-example: !include /examples/heartbeat.raml
+  get:
+    description: API endpoint for application health check

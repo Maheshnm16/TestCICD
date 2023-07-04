@@ -1,0 +1,95 @@
+#%RAML 1.0 ResourceType
+usage: Use this resourceTypes to represent any single item
+    #description: A single <<typeName>>
+get?:
+  responses:
+    200:
+      body:
+        application/json:
+          type: <<get-response-type>>
+          example: <<get-response-example>>
+    401:
+      body:
+        application/json:
+          type: <<get-response-type>>
+          example: !include examples/error-401.raml
+    403:
+      body:
+        application/json:
+          type: <<get-response-type>>
+          example: !include examples/error-403.raml
+    405:
+      body:
+        application/json:
+          type: <<get-response-type>>
+          example: !include examples/error-405.raml
+    
+    500: 
+      #description: |
+        #a new <<resourcePathName | !singularize>> was not created due to
+        #an attempt to violate a system constraint
+      body:
+        application/json:
+          type: <<get-response-type>>
+          example: !include examples/error-500.raml
+post?:
+  body: 
+    application/json:
+      type: <<post-request-type>>
+      example: <<post-request-example>>
+  responses:
+    201:
+      #description: |
+        #a new <<resourcePathName | !singularize>> was created
+      body:
+        application/json:
+          type: <<post-response-type>>
+          example: <<post-response-example>>
+    206:
+      #description: |
+        #a new <<resourcePathName | !singularize>> was created
+      body:
+        application/json:
+          type: <<post-response-type>>
+          example: !include examples/success-206.raml
+    404:
+      #description: |
+        #the requested <<resourcePathName | !singularize>> could not be found
+      body:
+        application/json:
+          type: <<post-response-type>>
+          example: !include examples/error-404.raml
+
+    400:
+      body:
+        application/json:
+          type: <<post-response-type>>
+          example: !include examples/error-400.raml  
+    401:
+      body:
+        application/json:
+          type: <<post-response-type>>
+          example: !include examples/error-401.raml
+    403:
+      body:
+        application/json:
+          type: <<post-response-type>>
+          example: !include examples/error-403.raml
+    405:
+      body:
+        application/json:
+          type: <<post-response-type>>
+          example: !include examples/error-405.raml
+    415:
+      body:
+        application/json:
+          type: <<post-response-type>>
+          example: !include examples/error-415.raml          
+    500: 
+      #description: |
+        #a new <<resourcePathName | !singularize>> was not created due to
+        #an attempt to violate a system constraint
+      body:
+        application/json:
+          type: <<post-response-type>>
+          example: !include examples/error-500.raml
