@@ -31,13 +31,13 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
-						<objectStoreV2>true</objectStoreV2>
+						
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
 						<server>mvncloudhub2</server>
-						<applicationName>mvn-test1</applicationName>
+						<applicationName>cicd-test1</applicationName>
 						<environment>Sandbox</environment>
-						<region>us-east-1</region>
+					
 
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
