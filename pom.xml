@@ -31,7 +31,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
-						<objectStoreV2>false</objectStoreV2>
+						<objectStoreV2>true</objectStoreV2>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
 						<server>mvncloudhub2</server>
